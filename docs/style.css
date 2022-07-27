@@ -1,0 +1,41 @@
+body, html {
+    height: 100vh
+}
+
+body {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 20% 35% 35% auto;
+    grid-template-rows:  10% auto auto auto;
+    grid-template-areas: 
+    "sidebar header header header"
+    "sidebar mc-1 mc-2 sc "
+    "sidebar mc-1 mc-2 sc"
+    "sidebar mc-1 mc-2 sc"
+    "sidebar mc-1 mc-2 sc";
+}
+
+aside {
+    grid-area: sidebar;
+    background-color: green;
+}
+
+header {
+    grid-area: header;
+    background-color: pink;
+}
+
+#mc-1 {
+    grid-area: mc-1;
+    background-color: violet;
+}
+
+#mc-2 {
+    grid-area: mc-2;
+    background-color: yellow;
+}
+
+#sc {
+    grid-area: sc;
+    background-color: red;
+}
