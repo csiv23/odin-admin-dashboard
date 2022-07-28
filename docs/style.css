@@ -1,12 +1,39 @@
 body, html {
-    height: 100vh
+    height: 100vh;
+    background-color: slategrey;
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(/fonts/3.0.2/MaterialIcons-Regular.woff2) format('woff2');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+}
+
+.material-icons::before {
+    content: attr(data-icon);
 }
 
 body {
     margin: 0;
     display: grid;
-    grid-template-columns: 20% 35% 35% auto;
-    grid-template-rows:  10% auto auto auto;
+    grid-template-columns: 20% 30% 30% auto;
+    grid-template-rows:  15% auto auto auto;
+    column-gap: 2rem;
     grid-template-areas: 
     "sidebar header header header"
     "sidebar mc-1 mc-2 sc "
@@ -17,25 +44,147 @@ body {
 
 aside {
     grid-area: sidebar;
-    background-color: green;
+    background-color: blue;
+}
+
+#sidebar-content-wrapper {
+    padding: 4%;
+
+}
+
+#sidebar-top {
+    outline: solid;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    outline: solid;
+    margin-bottom: 20%;
+}
+
+#home-bar {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto, auto, auto, auto, auto, auto;
+    row-gap: .75rem;
+    grid-template-areas: 
+    "home"
+    "profile"
+    "messages"
+    "history"
+    "tasks"
+    "communities";
+    outline: solid;
+    margin-bottom: 20%;
+}
+
+#settings-bar {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto, auto, auto;
+    row-gap: .75rem;
+    grid-template-areas: 
+    "settings"
+    "support"
+    "privacy";
+    outline: solid;
+}
+
+.sidebar-text {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
+
+#site-title {
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#site-logo {
+    height: 40px;
+    width: 40px;
+    background-color: white;
 }
 
 header {
     grid-area: header;
-    background-color: pink;
+    background-color: white;
+    outline: solid;
+    margin-left: -2rem;
+
+    display: flex;
 }
 
 #mc-1 {
     grid-area: mc-1;
-    background-color: violet;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 #mc-2 {
     grid-area: mc-2;
-    background-color: yellow;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 #sc {
     grid-area: sc;
-    background-color: red;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.card {
+    height: 300px;
+    width: auto;
+    background-color: white;
+    outline: solid;
+    gap: 5px;
+    position: relative;
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#card-text-wrapper {
+    padding: 2%;
+}
+#card-title {
+    font-weight: bold;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    font-size: 25px;
+}
+
+.sidecard {
+    height: 400px;
+    width: auto;
+    background-color: white;
+    gap: 5px;
+}
+
+#icon-wrapper {
+
+    width: 35%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 2%;
+    margin-right: 2%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.icon {
+    height: 40px;
+    width: 40px;
+    background-color: gray;
+    outline: solid;
 }
